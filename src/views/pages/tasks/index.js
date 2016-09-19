@@ -5,13 +5,11 @@ import { createSelector } from 'reselect';
 
 import { getNotification, notificationActions } from 'src/core/notification';
 import { getTaskFilter, getVisibleTasks, tasksActions } from 'src/core/tasks';
-import { get } from 'src/core/cmmdata';
 import Notification from '../../components/notification';
 import TaskFilters from '../../components/task-filters';
 import TaskForm from '../../components/task-form';
 import TaskList from '../../components/task-list';
 import { Task } from 'src/core/tasks';
-
 export class Tasks extends Component {
     static propTypes = {
     createTask: PropTypes.func.isRequired,
@@ -27,7 +25,9 @@ export class Tasks extends Component {
     unloadTasks: PropTypes.func.isRequired,
     updateTask: PropTypes.func.isRequired,
     loadTaskForEditing:PropTypes.func,
-    taskToEdit:PropTypes.instanceOf(Task)
+    taskToEdit:PropTypes.instanceOf(Task),
+    loadCmmdata: PropTypes.function,
+    loadCmmdataEmployees: PropTypes.function,
     };
     constructor(props, context) {
         super(props, context);

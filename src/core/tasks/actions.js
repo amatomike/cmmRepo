@@ -21,7 +21,7 @@ export function setupTaskWith(employee, job, service, time, note, key) {
     return new Task({employee: employee, job: job, service: service,  time: time,  note: note, key: key})
 }
 export function setupNewTask() {
-  return new Task({employee: 'new', job: '', service: '',  time: 0,  note: ''})
+  return new Task({employee: '', job: '', service: '',  time: 0,  note: ''})
 }
 
 export function createTask(employee, job, service, time, note) {

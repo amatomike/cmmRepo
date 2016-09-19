@@ -27,22 +27,22 @@ import {
 
   export const CmmDataState = new Record({
   cmmdatalist: new List(),
-  employeelist: new List(),
-  jobslist: new List(),
-  serviceslist: new List(),
+    employeesList: new List(),
+    jobsList: new List(),
+  servicesList: new List(),
 });
 
 
 export function cmmDataReducer(state = new CmmDataState(), {payload, type}) {
   switch (type) {
-    case LOAD_CMMDATA_SUCCESS:
-      return state.set('cmmdatalist', new List(payload.reverse()));
+    // case LOAD_CMMDATA_SUCCESS:
+    //   return state.set('cmmdatalist', new List(payload.reverse()));
     case LOAD_CMMDATA_JOBS_SUCCESS:
-      return state.set('jobslist', new List(payload.reverse()));
+      return state.set('jobsList', new List(payload.reverse()));
     case LOAD_CMMDATA_EMPLOYEES_SUCCESS:
-      return state.set('employeelist', new List(payload.reverse()));
+      return state.set('employeesList', new List(payload.reverse()));
     case LOAD_CMMDATA_SERVICES_SUCCESS:
-      return state.set('serviceslist', new List(payload.reverse()));
+      return state.set('servicesList', new List(payload.reverse()));
 
     case SIGN_OUT_SUCCESS:
       return new CmmDataState();

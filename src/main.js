@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { initAuth } from './core/auth';
+import { initAuth  } from './core/auth';
 import configureStore from './core/store';
 import Root from './views/root';
 import './views/styles/styles.scss';

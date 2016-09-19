@@ -60,3 +60,33 @@ export function signOutSuccess() {
     type: SIGN_OUT_SUCCESS
   };
 }
+export function setupAnonLogin(){
+  return dispatch => {
+firebase.auth().signInAnonymously().then(result => dispatch(signInSuccess(result)))
+    .catch(error => dispatch(signInError(error)))};
+}
+
+/*
+ firebase.auth().onAuthStateChanged(function(user) {
+ if (user) {
+ // User is signed in.
+ var isAnonymous = user.isAnonymous;
+ var uid = user.uid;
+ // ...
+ } else {
+ // User is signed out.
+ // ...
+ }
+ // ...
+ });
+
+var credential = firebase.auth.GoogleAuthProvider.credential(
+    googleUser.getAuthResponse().id_token);
+var credential = firebase.auth.EmailPasswordAuthProvider.credential(email, password);
+auth.currentUser.link(credential).then(function(user) {
+  console.log("Anonymous account successfully upgraded", user);
+}, function(error) {
+  console.log("Error upgrading anonymous account", error);
+});
+
+*/

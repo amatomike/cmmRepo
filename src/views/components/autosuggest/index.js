@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import isMobile from 'ismobilejs';
 import Autosuggest from 'react-autosuggest';
-import cmmdata from './cmmdata.js';
+// import cmmdata from './cmmdata.js';
+// import { CMMData } from 'src/core/cmmdata';
 const focusInputOnSuggestionClick = !isMobile.any;
 
 /*
@@ -40,7 +41,8 @@ export default class CmmAs extends Component {
         value:PropTypes.string,
         handleChange:PropTypes.func,
         handleKeyUp:PropTypes.func,
-        onSubmit:PropTypes.func
+        onSubmit:PropTypes.func,
+        cmmdata:PropTypes.function
     };
     constructor(props) {
         super(props);
@@ -63,7 +65,7 @@ export default class CmmAs extends Component {
             }
 
             const regex = new RegExp('.*' + escapedValue, 'i');
-            var cmmobj = cmmdata;
+            var cmmobj = this.props.cmmdata;
             switch (this.props.name) {
                 case "Service":
                     cmmobj = cmmdata.service_item_list;

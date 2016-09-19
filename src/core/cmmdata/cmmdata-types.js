@@ -1,24 +1,42 @@
 import { Record } from 'immutable';
 
 
-export const employees = new Record({
+export const Employees = new Record({
+  name:null,
+  id:null,
+  key:null,
+  employee:null
+});
+export const Jobs = new Record({
+  name:null,
+  id:null,
+  key:null,
+  job:null
+});
+export const Services = new Record({
+  name:null,
+  id:null,
+  key:null,
+  service:null
+});
+export const Employee = new Record({
   name:null,
   id:null,
   key:null
 });
-export const jobs = new Record({
+export const Job = new Record({
   name:null,
   id:null,
   key:null
 });
-export const services = new Record({
+export const Service = new Record({
   name:null,
   id:null,
   key:null
 });
-export const CMMData = new Record({
-  employees:null,
-  services:null,
-  jobs:null,
-  key:null
-});
+// export const CMMData = new Record({
+//   cmmdatalist: null,
+//   employeesList: null,
+//   jobsList: null,
+//   serviceslist: null
+// });

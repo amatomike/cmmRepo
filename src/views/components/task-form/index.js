@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { Task } from 'src/core/tasks';
 import CMMAc from '../autosuggest/index';
 import Form from 'muicss/lib/react/form';
-
 class TaskForm extends Component {
   static propTypes = {
     createTask: PropTypes.func.isRequired,
     task: PropTypes.instanceOf(Task),
     updateTask: PropTypes.func,
     editing:PropTypes.bool,
+    cmmdata:PropTypes.function
   };
 
   constructor(props, context) {
@@ -112,9 +112,9 @@ class TaskForm extends Component {
   render() {
     return (
         <Form noValidate onSubmit={::this.onSubmit}>
-          <CMMAc id="Employee" name="Employee" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.employee} ref={ (ref) => this.employeeinput = ref }/>
-          <CMMAc id="Service" name="Service" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.service} ref={ (ref) => this.serviceinput = ref }/>
-          <CMMAc id="Job" name="Job" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.job} ref={ (ref) => this.jobinput = ref }/>
+          <CMMAc cmmdata={this.props.cmmdata} id="Employee" name="Employee" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.employee} ref={ (ref) => this.employeeinput = ref }/>
+          <CMMAc cmmdata={this.props.cmmdata} id="Service" name="Service" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.service} ref={ (ref) => this.serviceinput = ref }/>
+          <CMMAc cmmdata={this.props.cmmdata} id="Job" name="Job" handleChange={::this.handleChange} handleKeyUp={::this.onKeyUp} value={this.state.job} ref={ (ref) => this.jobinput = ref }/>
           <input
               id="Note"
               autoComplete="off"

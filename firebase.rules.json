@@ -1,10 +1,16 @@
 {
   "rules": {
+    "cmmdata": {
+      ".read":true,
+      ".write":false
+    },
     "tasks": {
       "$uid": {
         ".read": "auth !== null && auth.uid === $uid",
         ".write": "auth !== null && auth.uid === $uid"
       }
-    }
+    },
+    ".read": true,
+    ".write": false
   }
 }
