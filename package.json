@@ -1,11 +1,11 @@
 {
   "name": "cmmhours",
-  "version": "0.6.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "based off of rpark's work ...",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/listingpass/cmmRepo"
+    "url": "https://github.com/amatomike/cmmRepo"
   },
   "author": {
     "name": "Mike",
