@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 
 import { getNotification, notificationActions } from 'src/core/notification';
 import { getTaskFilter, getVisibleTasks, tasksActions } from 'src/core/tasks';
+import { get } from 'src/core/cmmdata';
 import Notification from '../../components/notification';
 import TaskFilters from '../../components/task-filters';
 import TaskForm from '../../components/task-form';
